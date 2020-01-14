@@ -7,13 +7,7 @@ import static com.npaw.operations.SudokuOperation.*;
 
 public class RecursiveBacktrackingSolverTask implements SudokuSolver {
 
-    private static final RecursiveBacktrackingSolverTask instance = new RecursiveBacktrackingSolverTask();
-
     public RecursiveBacktrackingSolverTask() {}
-
-    public static RecursiveBacktrackingSolverTask getInstance() {
-        return instance;
-    }
 
     @Override
     public boolean solve(Sudoku sudoku) {
