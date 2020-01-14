@@ -6,7 +6,7 @@ public class ForkJoinSolverTask implements SudokuSolver {
 
     private static final ForkJoinSolverTask instance = new ForkJoinSolverTask();
 
-    private ForkJoinSolverTask() {}
+    public ForkJoinSolverTask() {}
 
     public static ForkJoinSolverTask getInstance() {
         return instance;

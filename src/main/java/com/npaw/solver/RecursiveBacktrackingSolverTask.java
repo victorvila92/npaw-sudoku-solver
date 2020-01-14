@@ -9,7 +9,7 @@ public class RecursiveBacktrackingSolverTask implements SudokuSolver {
 
     private static final RecursiveBacktrackingSolverTask instance = new RecursiveBacktrackingSolverTask();
 
-    private RecursiveBacktrackingSolverTask() {}
+    public RecursiveBacktrackingSolverTask() {}
 
     public static RecursiveBacktrackingSolverTask getInstance() {
         return instance;
@@ -30,12 +30,10 @@ public class RecursiveBacktrackingSolverTask implements SudokuSolver {
                         }
                         board[row][column] = NO_VALUE;
                     }
-                    sudoku.setSolved(false);
                     return false;
                 }
             }
         }
-        sudoku.setSolved(true);
         return true;
     }
 }

@@ -5,6 +5,7 @@ import com.npaw.model.Sudoku;
 import com.npaw.operations.SudokuOperation;
 import com.npaw.solver.ForkJoinSolverTask;
 import com.npaw.solver.RecursiveBacktrackingSolverTask;
+import com.npaw.solver.SudokuSolver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -29,16 +30,18 @@ public class Main {
 
         boolean mustSolveWithMultiThreading = args[1].equals("1");
         Sudoku sudoku = getSudokuFromFile(args[2]);
+        SudokuSolver solver;
 
         if(mustSolveWithMultiThreading){
             LOGGER.log(Level.INFO, "Trying to solve sudoku with MultiThreading (Fork join)...");
-            ForkJoinSolverTask.getInstance().solve(sudoku);
+            solver = new ForkJoinSolverTask();
         }else {
             LOGGER.log(Level.INFO, "Trying to solve sudoku with BruteForce (Recursive Backtracking)...");
-            RecursiveBacktrackingSolverTask.getInstance().solve(sudoku);
+            solver = new RecursiveBacktrackingSolverTask();
         }
+        boolean solved = solver.solve(sudoku);
 
-        if(sudoku.isSolved()){
+        if(solved){
             LOGGER.log(Level.INFO, "Solution found!");
             sudoku.display();
         }else {
