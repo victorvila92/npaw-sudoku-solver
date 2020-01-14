@@ -30,11 +30,12 @@ public class RecursiveBacktrackingSolverTask implements SudokuSolver {
                         }
                         board[row][column] = NO_VALUE;
                     }
+                    sudoku.setSolved(false);
                     return false;
                 }
             }
         }
-        sudoku.display();
+        sudoku.setSolved(true);
         return true;
     }
 }

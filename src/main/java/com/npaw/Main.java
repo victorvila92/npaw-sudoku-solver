@@ -36,7 +36,13 @@ public class Main {
         }else {
             LOGGER.log(Level.INFO, "Trying to solve sudoku with BruteForce (Recursive Backtracking)...");
             RecursiveBacktrackingSolverTask.getInstance().solve(sudoku);
+        }
 
+        if(sudoku.isSolved()){
+            LOGGER.log(Level.INFO, "Solution found!");
+            sudoku.display();
+        }else {
+            LOGGER.log(Level.INFO, "No Solution found!");
         }
     }
 

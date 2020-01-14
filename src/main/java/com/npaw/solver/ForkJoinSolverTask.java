@@ -17,7 +17,6 @@ public class ForkJoinSolverTask implements SudokuSolver {
 
         // TODO: FALTA
 
-        sudoku.display();
         return true;
     }
 }
