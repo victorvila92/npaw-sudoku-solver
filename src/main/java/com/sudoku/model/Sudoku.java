@@ -1,7 +1,5 @@
 package com.sudoku.model;
 
-import java.util.Arrays;
-
 public class Sudoku {
     int[][] grid;
 
@@ -14,8 +12,23 @@ public class Sudoku {
     }
 
     public void display(){
-        for (int[] row : grid){
-            System.out.println(Arrays.toString(row));
+        StringBuilder sb = new StringBuilder();
+        sb.append("╔═════╦═════╦═════╗\n");
+
+        for(int x = 0; x < grid.length; x++) {
+            sb.append("║ ");
+            for (int y = 0; y < grid[x].length; y++) {
+                sb.append(grid[x][y]);
+                if(y == 2 || y == 5)
+                    sb.append(" ║ ");
+            }
+            sb.append(" ║\n");
+
+            if(x == 2 || x == 5)
+                sb.append("╠═════╬═════╬═════╣\n");
         }
+
+        sb.append("╚═════╩═════╩═════╝");
+        System.out.println(sb.toString());
     }
 }
