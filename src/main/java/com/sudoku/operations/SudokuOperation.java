@@ -1,5 +1,6 @@
 package com.sudoku.operations;
 
+import com.sudoku.model.ConcurrentSudoku;
 import com.sudoku.model.Sudoku;
 
 import java.io.FileInputStream;
@@ -8,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public abstract class SudokuOperation {
+public class SudokuOperation {
 
     public static final int BOARD_SIZE = 9;
     public static final int SUBSECTION_SIZE = 3;
@@ -19,6 +20,11 @@ public abstract class SudokuOperation {
     public static final int MAX_VALUE = 9;
 
     public SudokuOperation(){}
+
+    public static ConcurrentSudoku getConcurrentSudokuFromFile(String filename) throws IOException {
+        Sudoku sudoku = getSudokuFromFile(filename);
+        return new ConcurrentSudoku(sudoku.getGrid());
+    }
 
     public static Sudoku getSudokuFromFile(String filename) throws IOException {
         Sudoku sudoku = new Sudoku(new int[9][9]);

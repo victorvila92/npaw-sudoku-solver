@@ -5,11 +5,10 @@ import com.sudoku.operations.SudokuOperation;
 
 import static com.sudoku.operations.SudokuOperation.*;
 
-public class RecursiveBacktrackingSolverTask implements SudokuSolver {
+public class RecursiveBacktrackingSolverTask {
 
     public RecursiveBacktrackingSolverTask() {}
 
-    @Override
     public boolean solve(Sudoku sudoku) {
 
         int[][] board = sudoku.getGrid();
@@ -28,6 +27,7 @@ public class RecursiveBacktrackingSolverTask implements SudokuSolver {
                 }
             }
         }
+        sudoku.display();
         return true;
     }
 }
