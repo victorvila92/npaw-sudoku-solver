@@ -1,5 +1,11 @@
-package com.npaw.operations;
+package com.sudoku.operations;
 
+import com.sudoku.model.Sudoku;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public abstract class SudokuOperation {
@@ -13,6 +19,27 @@ public abstract class SudokuOperation {
     public static final int MAX_VALUE = 9;
 
     public SudokuOperation(){}
+
+    public static Sudoku getSudokuFromFile(String filename) throws IOException {
+        Sudoku sudoku = new Sudoku(new int[9][9]);
+
+        try (FileInputStream inputStream = new FileInputStream(filename); Scanner sc = new Scanner(inputStream, StandardCharsets.UTF_8.name())) {
+            int lineNumber = 0;
+            while (sc.hasNextLine()) {
+                String line = sc.nextLine();
+                String[] digits = line.replace("x", "0").split(",");
+
+                for (int i = 0; i < digits.length; i++){
+                    sudoku.getGrid()[lineNumber][i] = Byte.parseByte(digits[i]);
+                }
+                ++lineNumber;
+            }
+            if (sc.ioException() != null) {
+                throw sc.ioException();
+            }
+        }
+        return sudoku;
+    }
 
     public static boolean isValid(int[][] board, int row, int column) {
         return rowConstraint(board, row) &&

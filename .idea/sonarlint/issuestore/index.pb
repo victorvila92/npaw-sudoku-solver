@@ -1,0 +1,19 @@
+
+7
+sudoku1,7/8/782b298ded07fc33769638e4dcc35a657ece1192
+7
+pom.xml,4/4/442292b8a7efeabbe4cc176709b833b1792140ec
+s
+Csrc/main/java/com/npaw/exceptions/CommandLineArgumentException.java,2/a/2af761a48ed3ce6cc5b1bb7327d5b52238cb3f90
+f
+6src/main/java/com/npaw/operations/SudokuOperation.java,6/e/6e8497c0249d006bf847fd0d2d0492341bd09cf3
+P
+ src/main/java/com/npaw/Main.java,8/f/8f98e9a65571065f52a22f6768c853d196f2db5d
+_
+/src/main/java/com/npaw/solver/SudokuSolver.java,0/d/0d1f8cba4064ea0b045ffc6562da2827ea020100
+X
+(src/main/java/com/npaw/model/Sudoku.java,3/0/305893b159c579d905a379c8a05a8364abc87f9f
+e
+5src/main/java/com/npaw/solver/ForkJoinSolverTask.java,7/8/78c6b54316ab13625c57eb9788154cd35af5ffe3
+r
+Bsrc/main/java/com/npaw/solver/RecursiveBacktrackingSolverTask.java,9/2/925a5f3496f5dd9b939a95dd73567610c77b38cf

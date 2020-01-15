@@ -1,4 +1,4 @@
-package com.npaw.model;
+package com.sudoku.model;
 
 import java.util.Arrays;
 

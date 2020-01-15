@@ -1,9 +1,9 @@
-package com.npaw.solver;
+package com.sudoku.solver;
 
-import com.npaw.model.Sudoku;
-import com.npaw.operations.SudokuOperation;
+import com.sudoku.model.Sudoku;
+import com.sudoku.operations.SudokuOperation;
 
-import static com.npaw.operations.SudokuOperation.*;
+import static com.sudoku.operations.SudokuOperation.*;
 
 public class RecursiveBacktrackingSolverTask implements SudokuSolver {
 

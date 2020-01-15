@@ -1,6 +1,6 @@
-package com.npaw.solver;
+package com.sudoku.solver;
 
-import com.npaw.model.Sudoku;
+import com.sudoku.model.Sudoku;
 
 public class ForkJoinSolverTask implements SudokuSolver {
 
